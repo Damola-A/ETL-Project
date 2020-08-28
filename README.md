@@ -8,7 +8,7 @@
 
 This project is designed to conduct a presentation of business information or Business Intelligence by extracting, transforming, and loading the top fastest-growing private companies in America for the last thirteen years (2007-2020).
 
-The purpose of this project was to build a database that demonstrates the changes in American top fastest-growing private companies through time. The database is built on by ingesting, combining, and restructuring data from three main data sources into a conformed one Postgresql database, and deploy in to Flask app. The three sources of our data are [Inc 5000](https://www.inc.com/inc5000/), [Financial times ranking 500 2020](https://www.ft.com/americas-fastest-growing-companies-2020), and [Growjo Company API](https://growjo.com/company_api) for scraping fastest-growing companies in 2020.
+The purpose of this project was to build a database that demonstrates the changes in American top fastest-growing private companies through time. The database is built on by ingesting, combining, and restructuring data from three main data sources into a conformed one Postgresql database, and deploy into Flask app. The three sources of our data are [Inc 5000](https://www.inc.com/inc5000/), [Financial times ranking 500 2020](https://www.ft.com/americas-fastest-growing-companies-2020), and [Growjo Company API](https://growjo.com/company_api) for scraping fastest-growing companies in 2020.
 
 ### Data Extraction 
 In this project we extracted, transformed, and loaded thirteen years (2007-2020) American top fastest-growing private companies. 
@@ -29,19 +29,18 @@ Our main sources:
 ### Data Enginering 
 
 After extracting the data we conducted a data engineering, and Entity-Relationship Diagram (ERD) by using an open-source toolkit called [Quickdatabasediagrams](https://app.quickdatabasediagrams.com/). 
-The model looks as follows: 
+The model is as below: 
 ![ETL_project](Image/ERD_model.png)
 
 ### Data Transformation
 * We used a Pandas functions in Jupyter Notebook to transform all CSV files, scraped data, and API request responses. 
 * We reviewed the files and transformed into a dataframes.
 * We used a python transformation functions for data cleaning, joining, filtering, and aggregating.
-* Several columns removed
 * Duplicate rows was removed, and successfully managed. 
 * We conducted some aggregation to find totals for comparison in the datasets.
 
 ### Load
-* For our final production, we used a relational database called Postgresql, in a total of three tables, twelve columns created, and the data loaded successfully. A flask app is also created for any one to get access the data. 
+* For our final production, we used a relational database called Postgresql, in a total of three tables, twelve columns were created, and the data loaded successfully. A flask app is also created for any one to get access to the data. 
 - Final tables/collections are stored in the production database
 
 #### Company Table
@@ -173,16 +172,16 @@ The model looks as follows:
   </tbody>
 </table>
 
-#### Aggrigate plot on High growth American private company enteries
+#### Aggregate plot on High growth American private company entries
 ![aggrigate_image](Image/Aggrigate_plot.png)
 
 ### Deploy in to flask app
 We used Postgresql with Flask templating to create a new HTML page that displays information about our project work.
 
-* We created a root route `/` which serve as a home page
-* We created a route called `/companies` that will displaye the json file for companies list.
+* We created a route route `/` which serve as a home page
+* We created a route called `/companies` that will display the json file for companies list.
 
-Finally, we created a template HTML file called index.html that take companies information, and displayed them. 
+Finally, we created a template HTML file called index.html that take companies information, and displays them. 
 
 ![Flask_app](Image/flask_app.png)
 
